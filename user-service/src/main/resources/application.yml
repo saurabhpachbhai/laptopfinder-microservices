@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: USER-SERVICE
+  jpa:
+    generate-ddl: 'true'
+    hibernate:
+      ddl-auto: 'update '
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  datasource:
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/laptopfinderdb
+    
+  config:
+    import: optional:configserver:http://localhost:9016
+server:
+  port: '9011'
